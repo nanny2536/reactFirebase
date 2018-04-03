@@ -11,6 +11,15 @@ import {
   Text,
   View
 } from 'react-native';
+import firebase from 'react-native-firebase';
+
+firebase.database().goOnline();
+
+const ref = firebase.database().ref('users/001');
+ref.update({
+  name:'Supattra Promjan',
+  age:25
+});
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
